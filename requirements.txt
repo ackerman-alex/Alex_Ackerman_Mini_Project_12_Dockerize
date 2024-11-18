@@ -1,0 +1,22 @@
+# This is where you specify the specific versions of the packages you are using. 
+
+# Below is an example
+
+# #devops
+black==24.8.0     # Needed to formatting
+click             # Unsure not installed
+pytest    # Hard Requirement for test to run
+pytest-cov==4.0.0 # Command not found - Hard Requirement for test to run 
+pylint==3.2.6     # Needed 
+# boto3             # Unsure
+
+# #web
+# fastapi==0.85.0
+# uvicorn==0.18.3
+
+# pylint 
+# pytest
+# pytestclick
+# click 
+# black 
+# pytest-cov
