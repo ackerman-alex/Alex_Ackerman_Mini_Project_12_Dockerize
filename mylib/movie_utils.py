@@ -12,19 +12,39 @@ def clean_title(title):
     return re.sub("[^a-zA-Z0-9 ]", "", title)
 
 
+# def load_and_clean_data(filepath):
+#     """
+#     Loads movie data from a CSV file, cleans the movie titles, and adds a new column.
+
+#     Args:
+#         filepath (str): Path to the CSV file containing movie data.
+
+#     Returns:
+#         DataFrame: A pandas DataFrame with cleaned titles.
+#     """
+#     movies = pd.read_csv(filepath)
+#     movies["clean_title"] = movies["title"].apply(clean_title)
+#     return movies
+
+
 def load_and_clean_data(filepath):
-    """
-    Loads movie data from a CSV file, cleans the movie titles, and adds a new column.
+    """Load and clean the movies dataset."""
+    try:
+        movies = pd.read_csv(filepath)
 
-    Args:
-        filepath (str): Path to the CSV file containing movie data.
+        # Check if 'title' column exists
+        if "title" not in movies.columns:
+            raise KeyError("'title' column is missing from the dataset")
 
-    Returns:
-        DataFrame: A pandas DataFrame with cleaned titles.
-    """
-    movies = pd.read_csv(filepath)
-    movies["clean_title"] = movies["title"].apply(clean_title)
-    return movies
+        # Clean and preprocess the movies data
+        movies["clean_title"] = movies["title"].apply(clean_title)
+        return movies
+    except FileNotFoundError:
+        raise FileNotFoundError(f"File not found: {filepath}")
+    except KeyError as e:
+        raise KeyError(f"Missing column in the dataset: {e}")
+    except Exception as e:
+        raise RuntimeError(f"An unexpected error occurred: {e}")
 
 
 def initialize_vectorizer(movies):
