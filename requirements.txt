@@ -1,22 +1,20 @@
-# This is where you specify the specific versions of the packages you are using. 
+# Required dependencies for development and testing
 
-# Below is an example
+# Data manipulation and machine learning
+pandas            # For data manipulation
+scikit-learn      # For machine learning algorithms and vectorization
 
-# #devops
-black==24.8.0     # Needed to formatting
-click             # Unsure not installed
-pytest    # Hard Requirement for test to run
-pytest-cov==4.0.0 # Command not found - Hard Requirement for test to run 
-pylint==3.2.6     # Needed 
-# boto3             # Unsure
+# DevOps
+black==24.8.0      # For code formatting
+click              # CLI tool dependency, version can be added if required
+pytest             # Required for running tests
+pytest-cov==4.0.0  # For test coverage reports
+pylint==3.2.6      # For code linting
 
-# #web
-# fastapi==0.85.0
-# uvicorn==0.18.3
+# Uncomment and update if needed
+# boto3             # AWS SDK for Python (optional)
 
-# pylint 
-# pytest
-# pytestclick
-# click 
-# black 
-# pytest-cov
+# Web development dependencies (commented out since not explicitly required)
+# fastapi==0.85.0   # FastAPI framework for building APIs
+# uvicorn==0.18.3   # ASGI server for FastAPI
+
