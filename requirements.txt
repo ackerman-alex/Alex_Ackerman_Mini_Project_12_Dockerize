@@ -18,3 +18,4 @@ pylint==3.2.6      # For code linting
 # fastapi==0.85.0   # FastAPI framework for building APIs
 # uvicorn==0.18.3   # ASGI server for FastAPI
 
+flask == 2.2.5
